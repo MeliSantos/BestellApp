@@ -30,3 +30,21 @@ let myDishes = [
         "description":"mit Zwiebeln und Garnelen"
 }
 ]
+
+let mySideDishes = [
+    {
+        "name": "Pizzabrötchen",
+        "price": 12.99,
+        "description":"mit oder ohne Belag"
+},
+{
+        "name": "Gebratene Garnelen",
+        "price": 12.99,
+        "description":" mit Gemüse"
+},
+{
+        "name": "Muslitos",
+        "price": 12.99,
+        "description":"panierte Krabbe"
+},
+]
