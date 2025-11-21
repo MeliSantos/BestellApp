@@ -1,11 +1,11 @@
 let myDishes = [
     {
-        "name": "Naruto Noodles",
+        "name": "Naruto Ramen",
         "price": 12.99,
         "description":" mit Gemüse und Toppings"
 },
  {
-        "name": "Ramen Noodles mit Rindfleisch",
+        "name": "Ramen mit Rindfleisch",
         "price": 11.99,
         "description":"mit Gemüse und Rindfleischstreifen"
 },
@@ -35,7 +35,7 @@ let mySideDishes = [
     {
         "name": "Pizzabrötchen",
         "price": 12.99,
-        "description":"mit oder ohne Belag"
+        "description":"mit oder ohne Belag, 8 Stück"
 },
 {
         "name": "Gebratene Garnelen",
@@ -45,6 +45,6 @@ let mySideDishes = [
 {
         "name": "Muslitos",
         "price": 12.99,
-        "description":"panierte Krabbe"
+        "description":"panierte Krabbe, 6 Stück"
 },
 ]
