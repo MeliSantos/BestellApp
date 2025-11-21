@@ -1,25 +1,26 @@
 body{
     margin: 0px;
-}
     
+}
 header{
     background-color: #ff8000;
     height:60px;
     display: flex;
     align-items: center;
 }
-
 .firstSection{
     display: flex;
     align-items: flex-start;
     justify-content: space-around;
     margin-top: -76px;
+    
 }
 .h1topic{
     margin-top:-60px;
 }
-h3{
+.orangeBold{
     color: #ff8000;
+    font-weight: bold;
 }
 .menu{
     display: flex;
@@ -42,6 +43,14 @@ a{
 }
 .forwardIcon{
     height: 26px;
+}
+.borderlineDiv{
+    border: 2px solid #f2f0f0;
+    margin: 16px;
+    padding-left: 10px;
+}
+h1,h2{
+    padding-left: 10px;
 }
 
 

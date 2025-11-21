@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./styles/basket.css">
 
     <link rel="icon" href="./assets/Icons/favicon.ico">
-    <script src="./scripts/db.js"></script>
+
 </head>
 
 <body>
@@ -31,29 +31,25 @@
             </div>
             <div class="h1topic">
                 <h1>Tokio Pizza</h1>
-                <h3> Bewertung (4.9 von 5 Sternen) </h3>
+                <p class="orangeBold" style="padding-left: 10px;"> Bewertung (4.9 von 5 Sternen) </p>
             </div>
-        <div class="menu">
-            <img class="forwardIcon" src="./assets/Icons/icons8-forward-24.png" alt="Forward Icon">
-            <a href="#"> Hauptgerichte</a> 
-            <a href="#"> Beilagen </a>
-        </div>
-<div class="main.Dishes">
-    <img class="imgDishes" src="./assets/img/noodles.jpg" alt="Ramen Nudeln">
-    <h2>Hauptgerichte</h2>
-    <div id="mainDishes">
-        <div class="borderlineDiv">
-            <div class="menuContent">
-
+            <div class="menu">
+                <img class="forwardIcon" src="./assets/Icons/icons8-forward-24.png" alt="Forward Icon">
+                <a href="#"> Hauptgerichte</a>
+                <a href="#"> Beilagen </a>
             </div>
-            <div class="plusDiv">
+            <div class="main.Dishes">
+                <img class="imgDishes" src="./assets/img/noodles.jpg" alt="Ramen Nudeln">
+                <h2>Hauptgerichte</h2>
+                <div>
+                    <div id="mainDishes">
+                    </div>
+                    <h2> Beilagen </h2>
+                    <div id="sideDishes">
 
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-
-
-</div>
         </main>
     </section>
     <section>
@@ -66,8 +62,10 @@
         </footer>
     </section>
 
+    <script src="./scripts/db.js"></script>
+    <script src="./scripts/template.js"></script>
+    <script src="./script.js"></script>
 </body>
-<script src="./script.js"></script>
-<script src="./scripts/template.js"></script>
+
 
 </html>

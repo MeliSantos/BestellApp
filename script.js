@@ -6,6 +6,31 @@
 // <a target="_blank" href="https://icons8.com/icon/3220/plus">Plus</a> Icon von <a target="_blank" href="https://icons8.com">Icons8</a>
 // <a target="_blank" href="https://icons8.com/icon/85458/minus">Minus</a> Icon von <a target="_blank" href="https://icons8.com">Icons8</a>
 
+let dishList = [];
+let sideDishList = [];
+
+function mainDishes() {
+    let listRef = document.getElementById('mainDishes');
+    for (let i = 0; i < myDishes.length; i++) {
+        let name = myDishes[i].name;
+        let price = myDishes[i].price;
+        let descr = myDishes[i].description;
+        dishList.push(name,price,descr);
+        listRef.innerHTML += dishesTemplate(i);
+    }
+} mainDishes();
+
+function sideDishes() {
+    let sideDishListRef = document.getElementById('sideDishes');
+    for (let i = 0; i < mySideDishes.length; i++) {
+        let name = myDishes[i].name;
+        let price = myDishes[i].price;
+        let descr = myDishes[i].description;
+       sideDishList.push(name,price,descr);
+       sideDishListRef.innerHTML +=  sideDishesTemplate(i);
+    }
+} sideDishes();
+
 
 
 
