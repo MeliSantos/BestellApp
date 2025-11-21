@@ -1,28 +1,40 @@
-body{
+body {
     margin: 0px;
-    
+
 }
-header{
+
+.mainSection {
+
+    scroll-behavior: smooth;
+    scrollbar-color: var(#ff8000);
+    margin-right: 10px;
+}
+
+header {
     background-color: #ff8000;
-    height:60px;
+    height: 60px;
     display: flex;
     align-items: center;
 }
-.firstSection{
+
+.firstSection {
     display: flex;
     align-items: flex-start;
     justify-content: space-around;
     margin-top: -76px;
-    
+
 }
-.h1topic{
-    margin-top:-60px;
+
+.h1topic {
+    margin-top: -60px;
 }
-.orangeBold{
+
+.orangeBold {
     color: #ff8000;
     font-weight: bold;
 }
-.menu{
+
+.menu {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -30,28 +42,47 @@ header{
     padding-left: 10px;
     background-color: #f2f0f0;
 }
+
 footer {
-     background-color: #f2f0f0;
-     color: #656565;
-     font-weight: bold;
+    background-color: #363636;
+    color:#f2f0f0;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
-a{
+
+a {
     text-decoration: none;
     color: #656565;
     font-weight: bold;
     padding: 12px;
 }
-.forwardIcon{
+
+.forwardIcon {
     height: 26px;
 }
-.borderlineDiv{
+
+.borderlineDiv {
     border: 2px solid #f2f0f0;
     margin: 16px;
     padding-left: 10px;
 }
-h1,h2{
+
+h1,
+h2 {
     padding-left: 10px;
 }
 
+.plusDiv {
+    display: flex;
+    justify-content: end;
+    align-items: flex-start;
+    margin-top: -15px;
 
+}
 
+.plusIMG {
+     border: 2px solid #f2f0f0;
+     cursor: pointer;
+}
