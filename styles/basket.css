@@ -13,10 +13,20 @@ justify-content: space-between;
     height: 400px;
     position: sticky;
     top: 0;
-    
+}
+.bskContent{
+    display: flex;
+    justify-content: space-around;
+}
+.bskIcons{
+    object-fit: cover;
+    width: 20px;
+    cursor: pointer;
 
 }
-
+table{
+    color: gray;
+}
 
 
 

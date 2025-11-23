@@ -1,11 +1,3 @@
-// Bild von <a href="https://pixabay.com/de/users/my_walking_diary-16369448/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5323540">My Walking Diary</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5323540">Pixabay</a> *
-// Bild von <a href="https://pixabay.com/de/users/joannawielgosz-168212/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7187809">Joanna Wielgosz</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7187809">Pixabay</a>
-// Bild von <a href="https://pixabay.com/de/users/wow_pho-916237/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=712667">Wow Phochiangrak</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=712667">Pixabay</a>
-// Bild von <a href="https://pixabay.com/de/users/petrovhey-2830663/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3000274">petrovhey</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3000274">Pixabay</a>
-// <a target="_blank" href="https://icons8.com/icon/89230/forward">Forward</a> Icon von <a target="_blank" href="https://icons8.com">Icons8</a>
-// <a target="_blank" href="https://icons8.com/icon/3220/plus">Plus</a> Icon von <a target="_blank" href="https://icons8.com">Icons8</a>
-// <a target="_blank" href="https://icons8.com/icon/85458/minus">Minus</a> Icon von <a target="_blank" href="https://icons8.com">Icons8</a>
-
 let dishList = [];
 let sideDishList = [];
 
@@ -15,7 +7,7 @@ function mainDishes() {
         let name = myDishes[i].name;
         let price = myDishes[i].price;
         let descr = myDishes[i].description;
-        dishList.push(name,price,descr);
+        dishList.push(name, price, descr);
         listRef.innerHTML += dishesTemplate(i);
     }
 } mainDishes();
@@ -23,19 +15,60 @@ function mainDishes() {
 function sideDishes() {
     let sideDishListRef = document.getElementById('sideDishes');
     for (let i = 0; i < mySideDishes.length; i++) {
-        let name = myDishes[i].name;
-        let price = myDishes[i].price;
-        let descr = myDishes[i].description;
-       sideDishList.push(name,price,descr);
-       sideDishListRef.innerHTML +=  sideDishesTemplate(i);
+        let name = mySideDishes[i].name;
+        let price = mySideDishes[i].price;
+        let descr = mySideDishes[i].description;
+        sideDishList.push(name, price, descr);
+        sideDishListRef.innerHTML += sideDishesTemplate(i);
     }
 } sideDishes();
 
+let basket= [];
 
+function addToBasket(i, type) {
+    let item = type === 'main' ? myDishes[i] : mySideDishes[i];
+    let index = basket.findIndex(b => b.name === item.name);
+    if (index === -1) {
+        basket.push({
+            name: item.name,
+            price: item.price,
+            amount: 1
+        });
+    } else {
+        basket[index].amount++;
+    } renderBasket();
+}
 
+function renderBasket() {
+    let basketRef = document.getElementById('basket');
+    basketRef.innerHTML = "";
+    for (let i = 0; i < basket.length; i++) {
+        let item = basket[i];
+        basketRef.innerHTML += addtoBasketDishes(i);
+    }  renderTotal();
+}
 
+function changeAmount(i, change) {
+    basket[i].amount += change;
+    if (basket[i].amount <= 0) {
+        basket.splice(i, 1);
+    }  renderBasket();
+}
 
+function renderTotal() {
+    let total = 0;
+    let resultRef = document.getElementById('resultPrice');
+    if (basket.length === 0) {
+        resultRef.innerHTML = "";
+        return;
+    }
+    for (let item of basket) {
+        total += item.amount * item.price;
+    }
+    document.getElementById('resultPrice').innerHTML = basketPrice(total);
+}
 
-
-
-
+function deleteItem(i) {
+    basket.splice(i, 1);
+    renderBasket();
+}
