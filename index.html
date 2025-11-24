@@ -11,13 +11,21 @@
     <link rel="stylesheet" href="./styles/fonts.css">
     <link rel="stylesheet" href="./styles/basket.css">
     <link rel="icon" href="./assets/Icons/favicon.ico">
-
 </head>
-
 <body>
     <section>
         <header>
             <img class="logo" src="./assets/Logo/Logo.png" alt="Bestell App Logo">
+        <nav id="header_menu" >
+                <a class="link" href="./index.html">Start</a> 
+                <a class="link" href="#basket"> Warenkorb </a>
+                <a class="link" href="./imprint.html">Impressum</a>
+            </nav>
+            <div class="burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </header>
     </section>
     <div class="content-wrapper">
@@ -33,8 +41,8 @@
                 </div>
                 <div class="menu">
                     <img class="forwardIcon" src="./assets/Icons/icons8-forward-24.png" alt="Forward Icon">
-                    <a href="#"> Hauptgerichte</a>
-                    <a href="#"> Beilagen </a>
+                    <a href="#mainDishes"> Hauptgerichte</a>
+                    <a href="#sideDishes"> Beilagen </a>
                 </div>
                 <div class="main.Dishes">
                     <img class="imgDishes" src="./assets/img/noodles.jpg" alt="Ramen Nudeln">
@@ -45,7 +53,6 @@
                         <h2> Beilagen </h2>
                         <img class="imgDishes" src="./assets/img/pizzabrötchen.jpg" alt="">
                         <div id="sideDishes" class="dishContainerContent">
-
                         </div>
                     </div>
                 </div>
@@ -65,15 +72,12 @@
     <section>
         <footer>
             <div class="footerSection">
-                <p>Contact | Imprint | Privacy Policy</p>
+             <a class="footerLink" href="./imprint.html"> Contact | Imprint | Privacy Policy</a>
             </div>
         </footer>
     </section>
-
     <script src="./scripts/db.js"></script>
     <script src="./scripts/template.js"></script>
     <script src="./script.js"></script>
 </body>
-
-
 </html>
