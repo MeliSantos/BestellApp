@@ -31,7 +31,7 @@ function sideDishes() {
     }
 } sideDishes();
 
-let basket= [];
+let basket = [];
 
 function addToBasket(i, type) {
     let item = type === 'main' ? myDishes[i] : mySideDishes[i];
@@ -53,14 +53,14 @@ function renderBasket() {
     for (let i = 0; i < basket.length; i++) {
         let item = basket[i];
         basketRef.innerHTML += addtoBasketDishes(i);
-    }  renderTotal();
+    } renderTotal();
 }
 
 function changeAmount(i, change) {
     basket[i].amount += change;
     if (basket[i].amount <= 0) {
         basket.splice(i, 1);
-    }  renderBasket();
+    } renderBasket();
 }
 
 function renderTotal() {
@@ -72,11 +72,28 @@ function renderTotal() {
     }
     for (let item of basket) {
         total += item.amount * item.price;
-    }
-    document.getElementById('resultPrice').innerHTML = basketPrice(total);
+    } document.getElementById('resultPrice').innerHTML = basketPrice(total);
 }
 
 function deleteItem(i) {
     basket.splice(i, 1);
     renderBasket();
 }
+function toggleBasket() {
+    const overlay = document.getElementById('basketOverlay');
+    const content = document.getElementById('basketOverlayInner');
+    if (overlay.style.display === "block") {
+        overlay.style.display = "none";
+    } else {
+        if (basket.length === 0) {
+            content.innerHTML = "<p>Dein Warenkorb ist leer!</p>";
+        } else {
+            content.innerHTML =
+                document.getElementById('basket').innerHTML +
+                document.getElementById('resultPrice').innerHTML;
+        } overlay.style.display = "block";
+    }
+}
+
+
+

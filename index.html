@@ -12,12 +12,13 @@
     <link rel="stylesheet" href="./styles/basket.css">
     <link rel="icon" href="./assets/Icons/favicon.ico">
 </head>
+
 <body>
     <section>
         <header>
-            <img class="logo" src="./assets/Logo/Logo.png" alt="Bestell App Logo">
-        <nav id="header_menu" >
-                <a class="link" href="./index.html">Start</a> 
+            <a href="./index.html"><img class="logo" src="./assets/Logo/Logo.png" alt="Bestell App Logo"></a>
+            <nav id="header_menu">
+                <a class="link" href="./index.html">Start</a>
                 <a class="link" href="#basket"> Warenkorb </a>
                 <a class="link" href="./imprint.html">Impressum</a>
             </nav>
@@ -58,6 +59,14 @@
                 </div>
             </main>
         </section>
+        <button id="basketBtn" onclick="toggleBasket()">Warenkorb</button>
+
+        <div id="basketOverlay">
+            <div id="basketOverlayContent">
+                <button id="closeOverlay" onclick="toggleBasket()">✖</button>
+                <div id="basketOverlayInner"></div>
+            </div>
+        </div>
         <section class="basket-wrapper">
             <div class="basketSection">
                 <h2 style="text-align: center;"> Warenkorb </h2>
@@ -72,12 +81,13 @@
     <section>
         <footer>
             <div class="footerSection">
-             <a class="footerLink" href="./imprint.html"> Contact | Imprint | Privacy Policy</a>
+                <a class="footerLink" href="./imprint.html"> Contact | Imprint | Privacy Policy</a>
             </div>
         </footer>
     </section>
     <script src="./scripts/db.js"></script>
     <script src="./scripts/template.js"></script>
     <script src="./script.js"></script>
+
 </body>
 </html>

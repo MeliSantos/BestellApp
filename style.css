@@ -1,5 +1,6 @@
 html {
     scroll-behavior: smooth;
+    max-width: 1440px;
 
 }
 
@@ -135,6 +136,7 @@ nav {
     display: block;
     transition: all 0.3s ease;
     margin-right: 30px;
+    cursor: pointer;
 }
 
 nav.show {
@@ -176,4 +178,11 @@ nav.show {
 .link:hover::after {
     transform: scaleX(1);
     transform-origin: left;
+}
+@media  (max-width: 700px){
+    .h1topic{
+        padding-top:80px;
+        text-align: center;
+    }
+
 }
