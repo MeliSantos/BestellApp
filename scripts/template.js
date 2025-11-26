@@ -36,18 +36,17 @@ function addtoBasketDishes(i) {
                     <hr>`
 }
 function basketPrice(total) {
-    return ` <table>
-                        <tr>
-                            <td> Zwischensumme </td>
-                            <td style="padding-left: 100px;"> ${total.toFixed(2)} € </td>
-                        </tr>
-                        <tr>
-                            <td> Lieferkosten </td>
-                            <td style="padding-left: 108px;"> 5.00 € </td>
-                        </tr>
-                        <tr>
-                            <td> Gesamt </td>
-                            <td style="padding-left: 100px;"> ${(total + 5).toFixed(2)} € </td>
-                        </tr>
-                    </table>`
+    return ` <div class="basketcontentprice">
+    <div>
+        <p>Zwischensumme</p>
+        <p> Lieferkosten </p>
+        <p style=" font-weight: bold; color: black;">Gesamt</p>
+    </div>
+
+    <div>
+        <p>${total.toFixed(2)} € </p>
+        <p> 5.00 € </p>
+        <p style=" font-weight: bold; color: black;">${(total + 5).toFixed(2)} € </p>
+    </div>
+</div>`
 }

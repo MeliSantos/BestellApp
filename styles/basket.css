@@ -12,35 +12,102 @@
 
 .basketSection {
     width: 100%;
-    padding-top:5px;
+    padding-top: 5px;
     position: sticky;
-    top:0px;
+    top: 0px;
     box-shadow: 1px 7px 17px 1px rgba(0, 0, 0, 0.084);
 }
+
 .bskContent {
     display: flex;
     justify-content: space-around;
     padding-left: 10px;
+}
+.basketcontentprice{
+    color: grey;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
 }
 
 .bskIcons {
     object-fit: cover;
     width: 20px;
     cursor: pointer;
-
 }
-.bskIcons:hover{
-     transform: scale(1.3);
+
+.bskIcons:hover {
+    transform: scale(1.3);
     transition: 0.2s ease;
 
 }
+
 .plusIMG:hover {
     transform: scale(1.3);
     transition: 0.2s ease;
     cursor: pointer;
 }
 
-table {
-    color: gray;
-    padding-left: 10px;
+/* Mobile Button unten */
+#basketBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 14px 20px;
+    background: orange;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* Overlay */
+#basketOverlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    z-index: 2000;
+}
+
+#basketOverlayContent {
+    background: white;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+#closeOverlay {
+    background: none;
+    border: none;
+    font-size: 26px;
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    .basket-wrapper {
+        display: none;
+    }
+
+    #basketBtn {
+        display: block;
+    }
+
+    .mainSection {
+        width: 100%;
+    }
+     nav{
+        text-align: center;
+    }
+    .link::after {
+        width: 100%;
+    }
+
 }
