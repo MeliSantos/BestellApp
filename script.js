@@ -124,8 +124,8 @@ function renderBasketOverlay() {
 
 function checkout() {
     document.getElementById('overlay').style.display = 'flex';
-    basket = [];            // Warenkorb leeren
-    updateBaskets();        // HTML neu rendern
+    basket = [];            
+    updateBaskets();        
     
 }
 
