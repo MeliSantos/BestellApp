@@ -42,10 +42,20 @@ function basketPrice(total) {
         <p> Lieferkosten </p>
         <p style=" font-weight: bold; color: black;">Gesamt</p>
     </div>
-
     <div>
         <p>${total.toFixed(2)} € </p>
         <p> 5.00 € </p>
         <p style=" font-weight: bold; color: black;">${(total + 5).toFixed(2)} € </p>
-    </div>
-</div>`}
+    </div> </div> 
+  <div class="btnPosition"><button class="btn" 
+        onclick="document.getElementById('overlay').style.display='flex'">Bestellen</button></div>
+        <div id="overlay">
+  <div class="overlay-content">
+    <h2>Bestellung erfolgreich!</h2>
+    <p>Dein Essen wird jetzt zubereitet und ist gleich unterwegs... </p>  <button class="close-btn"
+            onclick="document.getElementById('overlay').style.display='none'">
+      Schließen
+    </button>
+  </div>
+</div>
+`}
