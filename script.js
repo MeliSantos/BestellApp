@@ -122,4 +122,10 @@ function renderBasketOverlay() {
     basketRef.innerHTML += document.getElementById('resultPrice').innerHTML;
 }
 
+function checkout() {
+    document.getElementById('overlay').style.display = 'flex';
+    basket = [];            // Warenkorb leeren
+    updateBaskets();        // HTML neu rendern
+    
+}
 
