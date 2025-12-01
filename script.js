@@ -33,6 +33,7 @@ function sideDishes() {
 
 let basket = [];
 
+
 function addToBasket(i, type) {
     let item = type === 'main' ? myDishes[i] : mySideDishes[i];
     let index = basket.findIndex(b => b.name === item.name);
@@ -44,7 +45,7 @@ function addToBasket(i, type) {
         });
     } else {
         basket[index].amount++;
-    } renderBasket();
+    } renderBasket(); 
 }
 
 function renderBasket() {
@@ -55,17 +56,34 @@ function renderBasket() {
         basketRef.innerHTML += addtoBasketDishes(i);
     } renderTotal();
 }
+function renderBasketOverlay(){
+      let basketRef = document.getElementById('basketPriceNew');
+    basketRef.innerHTML = "";
+    for (let i = 0; i < basket.length; i++) {
+        let item = basket[i];
+        basketRef.innerHTML += addtoBasketDishes(i);
+    }
+}
 
+function updateBaskets(){
+    renderBasket()
+     renderBasketOverlay()
+    }
+    
 function changeAmount(i, change) {
+    console.log("i, change", i , change)
     basket[i].amount += change;
     if (basket[i].amount <= 0) {
         basket.splice(i, 1);
-    } renderBasket();
+    } updateBaskets();
 }
 
 function renderTotal() {
+    console.log("hi");
     let total = 0;
     let resultRef = document.getElementById('resultPrice');
+    if(!resultRef) return console.log("abc da amazonia")
+    console.log("hi", resultRef);
     if (basket.length === 0) {
         resultRef.innerHTML = "";
         return;
@@ -77,23 +95,31 @@ function renderTotal() {
 
 function deleteItem(i) {
     basket.splice(i, 1);
-    renderBasket();
+    updateBaskets();
 }
+
 function toggleBasket() {
+    console.log("toggleBasket()");
     const overlay = document.getElementById('basketOverlay');
-    const content = document.getElementById('basketOverlayInner');
+
     if (overlay.style.display === "block") {
         overlay.style.display = "none";
     } else {
-        if (basket.length === 0) {
-            content.innerHTML = "<p>Dein Warenkorb ist leer!</p>";
-        } else {
-            content.innerHTML =
-                document.getElementById('basket').innerHTML +
-                document.getElementById('resultPrice').innerHTML;
-        } overlay.style.display = "block";
+        renderBasketOverlay();  
+        overlay.style.display = "block";
     }
 }
 
+function renderBasketOverlay() {
+    let basketRef = document.getElementById('basketOverlayInner');
+    basketRef.innerHTML = "";
+
+    if (basket.length === 0) {
+        basketRef.innerHTML = "<p>Dein Warenkorb ist leer!</p>";
+        return;
+    }
+    basketRef.innerHTML += document.getElementById('basket').innerHTML;
+    basketRef.innerHTML += document.getElementById('resultPrice').innerHTML;
+}
 
 

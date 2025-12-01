@@ -36,7 +36,7 @@ function addtoBasketDishes(i) {
                     <hr>`
 }
 function basketPrice(total) {
-    return ` <div class="basketcontentprice">
+    return ` <div id="basketPriceNew" class="basketcontentprice">
     <div>
         <p>Zwischensumme</p>
         <p> Lieferkosten </p>
@@ -48,5 +48,4 @@ function basketPrice(total) {
         <p> 5.00 € </p>
         <p style=" font-weight: bold; color: black;">${(total + 5).toFixed(2)} € </p>
     </div>
-</div>`
-}
+</div>`}
