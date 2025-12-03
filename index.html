@@ -7,7 +7,6 @@
     <title>Bestell App</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./styles/assets.css">
-    <link rel="stylesheet" href="./styles/standard.css">
     <link rel="stylesheet" href="./styles/fonts.css">
     <link rel="stylesheet" href="./styles/basket.css">
     <link rel="icon" href="./assets/Icons/favicon.ico">
@@ -42,18 +41,20 @@
                 </div>
                 <div class="menu">
                     <img class="forwardIcon" src="./assets/Icons/icons8-forward-24.png" alt="Forward Icon">
-                    <a href="#mainDishes"> Hauptgerichte</a>
-                    <a href="#sideDishes"> Beilagen </a>
+                    <a href="#Dishes1"> Hauptgerichte</a>
+                    <a href="#Dishes2"> Beilagen </a>
                 </div>
-                <div class="main.Dishes">
+                <div class="main.Dishes" id="Dishes1">
                     <img class="imgDishes" src="./assets/img/noodles.jpg" alt="Ramen Nudeln">
                     <h2>Hauptgerichte</h2>
                     <div>
                         <div id="mainDishes" class="dishContainerContent">
                         </div>
-                        <h2> Beilagen </h2>
-                        <img class="imgDishes" src="./assets/img/pizzabrötchen.jpg" alt="">
-                        <div id="sideDishes" class="dishContainerContent">
+                        <div id="Dishes2">
+                            <h2> Beilagen </h2>
+                            <img class="imgDishes" src="./assets/img/pizzabrötchen.jpg" alt="">
+                            <div id="sideDishes" class="dishContainerContent">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -64,14 +65,18 @@
         <div id="basketOverlay">
             <div id="basketOverlayContent">
                 <button id="closeOverlay" onclick="toggleBasket()">✖</button>
-                <div id="basketOverlayInner"></div>
+                <h2 style="text-align: center;"> Warenkorb </h2>
+                <div id="basketOverlayInner">
+                    <div id="basketOverlayScroll" class="cartScroll"></div>
+                    <div id="basketOverlayFooter"></div>
+                </div>
             </div>
         </div>
         <section class="basket-wrapper">
             <div class="basketSection">
                 <h2 style="text-align: center;"> Warenkorb </h2>
                 <hr>
-                <div id="basket">
+                <div id="basket" class="cartScroll">
                 </div>
                 <div id="resultPrice">
                 </div>

@@ -71,7 +71,6 @@ function updateBaskets(){
     }
     
 function changeAmount(i, change) {
-    console.log("i, change", i , change)
     basket[i].amount += change;
     if (basket[i].amount <= 0) {
         basket.splice(i, 1);
@@ -79,11 +78,8 @@ function changeAmount(i, change) {
 }
 
 function renderTotal() {
-    console.log("hi");
     let total = 0;
     let resultRef = document.getElementById('resultPrice');
-    if(!resultRef) return console.log("abc da amazonia")
-    console.log("hi", resultRef);
     if (basket.length === 0) {
         resultRef.innerHTML = "";
         return;
@@ -99,7 +95,6 @@ function deleteItem(i) {
 }
 
 function toggleBasket() {
-    console.log("toggleBasket()");
     const overlay = document.getElementById('basketOverlay');
 
     if (overlay.style.display === "block") {
@@ -126,6 +121,21 @@ function checkout() {
     document.getElementById('overlay').style.display = 'flex';
     basket = [];            
     updateBaskets();        
-    
+    const basketOverlay = document.getElementById('basketOverlay');
+    basketOverlay.style.display = 'none';
 }
 
+function renderBasketOverlay() {
+    const scroll = document.getElementById('basketOverlayScroll');
+    const footer = document.getElementById('basketOverlayFooter');
+
+    scroll.innerHTML = "";
+    footer.innerHTML = "";
+
+    if (basket.length === 0) {
+        scroll.innerHTML = "<p>Dein Warenkorb ist leer!</p>";
+        return;
+    }
+    scroll.innerHTML = document.getElementById('basket').innerHTML;
+    footer.innerHTML = document.getElementById('resultPrice').innerHTML;
+}

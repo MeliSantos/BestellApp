@@ -1,13 +1,12 @@
 html {
     scroll-behavior: smooth;
-    max-width: 1440px;
-
 }
 
 body {
     margin: 0px;
     font-family: 'Raleway', sans-serif;
-
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 .mainSection {
@@ -66,7 +65,8 @@ a {
     font-weight: bold;
     padding: 12px;
 }
-a:hover{
+
+a:hover {
     color: #ff8000;
 }
 
@@ -179,9 +179,10 @@ nav.show {
     transform: scaleX(1);
     transform-origin: left;
 }
-@media  (max-width: 700px){
-    .h1topic{
-        padding-top:80px;
+
+@media (max-width: 700px) {
+    .h1topic {
+        padding-top: 80px;
         text-align: center;
     }
 
