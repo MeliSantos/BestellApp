@@ -1,11 +1,21 @@
 html {
     scroll-behavior: smooth;
 }
+html, body {
+    height: 100%;
+    margin: 0;
+}
 
 body {
-    margin: 0px;
     font-family: 'Raleway', sans-serif;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
    
+}
+main{
+    max-width: 1920px;
+    margin:0 auto;
 }
 
 .mainSection {
@@ -124,8 +134,7 @@ hr {
 
 nav {
     display: none;
-    flex-direction: column;
-    background-color: #ffffffe3;
+    background-color: #ffffffeb;
     position: absolute;
     top: 60px;
     width: 100%;
@@ -154,7 +163,11 @@ nav {
 
 nav.show {
     display: flex;
+    justify-content: space-evenly;
+    z-index: 9999;
+    max-width: 1920px;
 }
+
 
 .burger.active span:nth-child(1) {
     transform: rotate(45deg) translateY(7px);
@@ -180,7 +193,7 @@ nav.show {
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 300px;
+    width: 200px;
     height: 2px;
     background-color: #ff8000;
     transform: scaleX(0);
