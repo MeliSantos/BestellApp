@@ -1,7 +1,9 @@
 html {
     scroll-behavior: smooth;
 }
-html, body {
+
+html,
+body {
     height: 100%;
     margin: 0;
 }
@@ -11,15 +13,16 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
-   
+
 }
-main{
+
+main {
     max-width: 1920px;
-    margin:0 auto;
+    margin: 0 auto;
 }
 
 .mainSection {
-    width: calc(100% - 300px); 
+    width: calc(100% - 300px);
     max-width: 1920px;
     margin: 0 auto;
 }
@@ -33,16 +36,18 @@ header {
     box-shadow: 0px 8px 24px rgba(149, 149, 149, 0.2);
     display: flex;
     justify-content: center;
-   
+
 }
-.headerContent{
+
+.headerContent {
     width: 100%;
     max-width: 1920px;
     height: 100%;
     padding: 0 20px;
 
     display: flex;
-    justify-content: space-between; /* <-- das bleibt wie du es willst */
+    justify-content: space-between;
+    /* <-- das bleibt wie du es willst */
     align-items: center;
 
 }
@@ -210,6 +215,45 @@ nav.show {
     .h1topic {
         padding-top: 80px;
         text-align: center;
+    }
+
+    .page-wrapperimpr {
+        padding: 20px;
+        text-align: left;
+        max-width: 100%;
+    }
+
+    .page-wrapperimpr h1 {
+        font-size: 26px;
+    }
+
+    .page-wrapperimpr h2 {
+        font-size: 20px;
+        margin-top: 25px;
+    }
+
+    .page-wrapperimpr h3 {
+        font-size: 18px;
+    }
+
+    .page-wrapperimpr p,
+    .page-wrapperimpr li {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    ul {
+        padding-left: 20px;
+    }
+
+    .imprint {
+        white-space: normal;
+    }
+
+    .imprint a {
+        display: inline-block;
+        word-break: break-word;
+        overflow-wrap: break-word;
     }
 
 }
