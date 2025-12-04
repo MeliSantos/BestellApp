@@ -6,30 +6,18 @@ burger?.addEventListener('click', () => {
     nav.classList.toggle('show');
 });
 
-let dishList = [];
-let sideDishList = [];
 
-function mainDishes() {
-    let listRef = document.getElementById('mainDishes');
-    for (let i = 0; i < myDishes.length; i++) {
-        let name = myDishes[i].name;
-        let price = myDishes[i].price;
-        let descr = myDishes[i].description;
-        dishList.push(name, price, descr);
-        listRef.innerHTML += dishesTemplate(i);
-    }
-} mainDishes();
+function renderDishCategory(list, targetId, templateFn) {
+    const target = document.getElementById(targetId);
 
-function sideDishes() {
-    let sideDishListRef = document.getElementById('sideDishes');
-    for (let i = 0; i < mySideDishes.length; i++) {
-        let name = mySideDishes[i].name;
-        let price = mySideDishes[i].price;
-        let descr = mySideDishes[i].description;
-        sideDishList.push(name, price, descr);
-        sideDishListRef.innerHTML += sideDishesTemplate(i);
+    target.innerHTML = ""; 
+
+    for (let i = 0; i < list.length; i++) {
+        target.innerHTML += templateFn(i);
     }
-} sideDishes();
+}
+renderDishCategory(myDishes, 'mainDishes', dishesTemplate);
+renderDishCategory(mySideDishes, 'sideDishes', sideDishesTemplate);
 
 let basket = [];
 
@@ -99,9 +87,11 @@ function toggleBasket() {
 
     if (overlay.style.display === "block") {
         overlay.style.display = "none";
+        document.body.classList.remove("no-scroll");
     } else {
-        renderBasketOverlay();  
         overlay.style.display = "block";
+        document.body.classList.add("no-scroll");
+        renderBasketOverlay();
     }
 }
 
