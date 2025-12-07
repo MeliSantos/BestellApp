@@ -112,6 +112,7 @@ function checkout() {
     updateBaskets();        
     const basketOverlay = document.getElementById('basketOverlay');
     basketOverlay.style.display = 'none';
+    document.body.classList.remove("no-scroll");
 }
 
 function renderBasketOverlay() {
