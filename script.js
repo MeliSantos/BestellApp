@@ -7,17 +7,16 @@ burger?.addEventListener('click', () => {
 });
 
 
-function renderDishCategory(list, targetId, templateFn) {
+function renderDishCategory(list, targetId, type) {
     const target = document.getElementById(targetId);
-
-    target.innerHTML = ""; 
+    target.innerHTML = "";
 
     for (let i = 0; i < list.length; i++) {
-        target.innerHTML += templateFn(i);
+        target.innerHTML += dishTemplate(list, i, type);
     }
 }
-renderDishCategory(myDishes, 'mainDishes', dishesTemplate);
-renderDishCategory(mySideDishes, 'sideDishes', sideDishesTemplate);
+renderDishCategory(myDishes, 'mainDishes', 'main');
+renderDishCategory(mySideDishes, 'sideDishes', 'side');
 
 let basket = [];
 

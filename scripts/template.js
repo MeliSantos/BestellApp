@@ -1,28 +1,20 @@
-function dishesTemplate(i) {
-    return `<div class="borderlineDiv">
-         <div class="movePlusDiv">
-          <div onclick="addToBasket(${i}, 'main')"><h3>${myDishes[i].name}</h3>
-          <p>${myDishes[i].description}</p>
-          <p class="orangeBold">${myDishes[i].price} €</p></div>
-          <div class="plusDiv" onclick="addToBasket(${i}, 'main')"><img class="plusIMG" src="./assets/Icons/icons8-plus-24.png" alt="Zum Warenkorb Hinzufügen Zeichen">
-         </div>
-         </div>
-        </div>
-            `;
+function dishTemplate(list, i, type) {
+    return `
+        <div class="borderlineDiv">
+            <div class="movePlusDiv">
+                <div onclick="addToBasket(${i}, '${type}')">
+                    <h3>${list[i].name}</h3>
+                    <p>${list[i].description}</p>
+                    <p class="orangeBold">${list[i].price} €</p>
+                </div>
+                <div class="plusDiv" onclick="addToBasket(${i}, '${type}')">
+                    <img class="plusIMG" src="./assets/Icons/icons8-plus-24.png" alt="Zum Warenkorb Hinzufügen Zeichen">
+                </div>
+            </div>
+        </div>`;
 }
-function sideDishesTemplate(i) {
-    return `<div class="borderlineDiv">
-        <div class="movePlusDiv">
-          <div onclick="addToBasket(${i}, 'side')"><h3>${mySideDishes[i].name}</h3>
-           <p>${mySideDishes[i].description}</p>
-           <p class="orangeBold">${mySideDishes[i].price} €</p></div>
-        <div class="plusDiv" onclick="addToBasket(${i}, 'side')"><img class="plusIMG" src="./assets/Icons/icons8-plus-24.png" alt="Zum Warenkorb Hinzufügen Zeichen">
-         </div>
-         </div>
-        </div>
-            `;
 
-}
+
 function addtoBasketDishes(i) {
     const item = basket[i];
     return `<h3 style="padding-left: 10px;" >${item.name}</h3>
