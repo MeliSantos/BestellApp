@@ -119,7 +119,7 @@ body.no-scroll {
 
 .cartScroll {
     overflow-y: scroll;
-    max-height: 100vh;;
+    max-height: 100vh;
 }
 
 .cartScroll::-webkit-scrollbar {
